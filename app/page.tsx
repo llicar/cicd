@@ -1,5 +1,10 @@
-import React from "react"
+import React from "react";
 
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
-  }
+return (
+<div>
+Hello, Next.js!
+<p>alllouuttt</p>
+</div>
+);
+}
