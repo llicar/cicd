@@ -3,7 +3,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:prod": "npm build && npx vercel ./out --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
   },
   "dependencies": {
     "next": "^14.2.15",
