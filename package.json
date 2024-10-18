@@ -4,7 +4,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:prod": "npm run build && npx vercel ../out --yes --token=$VERCEL_TOKEN --prod"
+    "deploy:prod": "npm run build && npx vercel --yes --token=$VERCEL_TOKEN --prod"
   },
   "dependencies": {
     "next": "^14.2.15",
