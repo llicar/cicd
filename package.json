@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build --output public",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "deploy:prod": "npm run build && npx vercel --yes --token=$VERCEL_TOKEN --prod"
