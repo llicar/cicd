@@ -1,3 +1,5 @@
 // next.config.js
-export const output = 'export';
+module.exports = {
+    output: 'export',
+  };
   
