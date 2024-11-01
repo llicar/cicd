@@ -24,8 +24,10 @@ defaultHeaders["accept"] =
     "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
 defaultHeaders["content-type"] = "application/json";
 
-console.log("GITHUB_TOKEN", GITHUB_REPOSITORY);
+console.log("GITHUB_TOKEN", GH_TOKEN);
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
+console.log("GITHUB_PR",GITHUB_PR_NUMBER);
+console.log("GITHUB",GH_COMMENT);
 
 fetch(
     `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
