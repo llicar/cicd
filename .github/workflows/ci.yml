@@ -1,8 +1,16 @@
 name: "CI (Integração Continua): Main Workflow"
 
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  GH_TOKEN: ${{secrets.GH_TOKEN}}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+ 
 on:
   pull_request:
     types: [opened, synchronize]
+
 
 jobs:
   linter:
@@ -15,3 +23,25 @@ jobs:
 
       - name: Run Linter
         run: npm run lint
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Installation
+        run: npm install
+      - name: Run preview Deployment
+        run: npm run deploy:preview
+
+  test_e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.0
+          cache: 'npm'
+      - name: Cypress
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+
