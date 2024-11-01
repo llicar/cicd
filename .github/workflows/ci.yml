@@ -44,8 +44,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-      - name: Run Insyallation
-        run: npm run install
-      - name: Run Linter
-        run: npm run test:e2e
 
