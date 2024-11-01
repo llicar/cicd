@@ -13,13 +13,13 @@ console.log(`You can see the deploy preview on: ${DEPLOY_URL}`);
 //=============================
 
 console.log("[GIHUB_COMMENT]: START");
-const {GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER} = process.env;
+const {GH_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER} = process.env;
 const GH_COMMENT = `
 - Deploy URL: [${DEPLOY_URL}](${DEPLOY_URL})
 `;
 
 const defaultHeaders = {};
-defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
+defaultHeaders["authorization"] = `token ${GH_TOKEN}`;
 defaultHeaders["accept"] = 
     "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
 defaultHeaders["content-type"] = "application/json";
